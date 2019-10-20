@@ -1,4 +1,4 @@
-%include%include "asm_io.inc"
+%include "asm_io.inc"
 segment .text
 global asm_main
 asm_main:
@@ -98,6 +98,29 @@ asm_main:
 		call print_nl
 		dec ecx
 		jnz chart_loop
+							;chart printed, print bottom of chart.
+		mov eax,124
+		call print_char
+		mov eax,126
+		call print_char
+		call print_char
+		mov eax,0 
+		call print_int
+		mov eax,126
+		call print_char
+		call print_char
+		mov eax,1 
+		call print_int
+		mov eax,126
+		call print_char
+		call print_char
+		mov eax,2
+		call print_int
+		mov eax,126
+		call print_char
+		call print_char
+		mov eax,124
+		call print_char
 	
 	popa
 	leave
